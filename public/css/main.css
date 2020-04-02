@@ -11,6 +11,8 @@
   3.0 Profile
   4.0 Friends
   5.0 Conversations
+  6.0 Video Call
+  7.0 Settings
 
  
  
@@ -610,9 +612,6 @@ button {
   }
 }
 
-@media (max-width: 480px) {
-}
-
 /*----------------------------------------------
 	6.0 Video Call 
 -----------------------------------------------*/
@@ -639,7 +638,7 @@ button {
   justify-content: space-between;
   width: 100%;
   max-width: 300px;
-  margin: 20px 0 75px;
+  margin: 35px 0 75px;
 }
 
 .video__options button {
@@ -656,13 +655,13 @@ button {
 }
 
 .video__options button:nth-child(1):hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 255, 0, 0.5);
 }
 .video__options button:nth-child(2):hover {
   background-color: rgba(255, 0, 0, 0.9);
 }
 .video__options button:nth-child(3):hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 255, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -681,3 +680,126 @@ button {
 /*----------------------------------------------
 	6.0 Settings  
 -----------------------------------------------*/
+
+.settings-list {
+  margin-top: 50px;
+}
+
+.settings-list__item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.settings-list__item p {
+  font-size: 14px;
+  margin-bottom: -5px;
+  border-bottom: 1px solid transparent;
+}
+
+.settings-list__item .settings-list__item__info {
+  color: rgb(155, 155, 155);
+  font-size: 12px;
+}
+
+.settings-list__item__option {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.settings-list__option__button {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
+
+  width: 45px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+.settings-list__option__switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.settings-list__option__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(29, 185, 84);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(29, 185, 84);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .settings-header {
+    display: block;
+  }
+  .settings-header h2 {
+    text-align: center;
+  }
+
+  .settings-header__options {
+    justify-content: space-around;
+    margin: 30px 0px 0px;
+  }
+
+  .settings-list__item {
+    margin-bottom: 20px;
+  }
+}
