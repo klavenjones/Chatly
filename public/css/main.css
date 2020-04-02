@@ -807,3 +807,153 @@ input:checked + .slider:before {
 /*----------------------------------------------
 	3.0 Chatroom 
 -----------------------------------------------*/
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+
+  height: 70vh;
+  width: 100%;
+}
+
+.messages {
+  overflow: auto;
+  flex: auto;
+}
+
+.message-container {
+  position: relative;
+  display: flex;
+  margin-top: 3px;
+}
+
+.message-bubble {
+  background: slategrey;
+  border-radius: 18px;
+  margin: 8px 0px;
+  padding: 3px 15px;
+  color: white;
+  display: inline-block;
+  max-width: 65%;
+}
+
+.message-bubble__text {
+  width: 100%;
+  letter-spacing: 0;
+  text-align: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.message-container__user-photo {
+  background-color: ghostwhite;
+  height: 50px;
+  width: 50px;
+  align-self: flex-end;
+  border-radius: 100%;
+}
+
+.other-user {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.other-user .message-bubble {
+  background-color: rgba(15, 22, 121, 0.6);
+  border-radius: 18px 18px 18px 0;
+}
+
+.other-user:nth-child(even) .message-bubble {
+  background-color: rgba(63, 24, 107, 0.6);
+}
+
+.other-user .message-container__user-photo {
+  margin-right: 10px;
+}
+.other-user:nth-child(even) .message-container__user-photo {
+  background-color: indianred;
+}
+
+.current-user {
+  justify-content: flex-end;
+}
+
+.current-user .message-bubble {
+  background-color: rgb(14, 74, 109);
+  border-radius: 18px 18px 0px 18px;
+}
+
+.current-user .message-container__user-photo {
+  background-color: goldenrod;
+  margin-left: 10px;
+}
+
+.chat-container__day-marker {
+  margin: 40px 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+.chat-container__day-marker div {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-style: inset;
+  width: 40%;
+  height: 0;
+  align-self: center;
+}
+.chat-container__day-marker p {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.chat-container__day-marker p span {
+  font-weight: 200;
+}
+
+.chat-container__message-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  width: 95%;
+  height: 56px;
+  margin: 15px auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-container__message-input input {
+  width: 60%;
+  padding: 0 5px;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  margin-right: auto;
+}
+
+.chat-container__message-input input:focus {
+  outline: none;
+}
+
+.chat-container__message-input button {
+  background: transparent;
+  border: 0;
+  padding: 10px;
+}
+.chat-container__message-input button:first-child::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 100;
+  content: "\f118";
+  font-size: 36px;
+}
+
+.chat-container__message-input button:last-child::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 100;
+  content: "\f03e";
+  font-size: 20px;
+}
+
+
